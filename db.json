@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "name": "Arpit Kadeval",
+      "username": " kunkavav",
+      "email": "arpitkadeval15@gmail.com",
+      "password": "12345685",
+      "city": "amreli",
+      "gender": "male",
+      "phone": "1234567890",
+      "country": "Holy See (Vatican City State)",
+      "id": 5
+    },
+    {
+      "name": "Arpit Kadeval",
+      "username": "http://localhost:3000/contact",
+      "email": "arpitkadeval7878@gmail.com",
+      "password": "+945612398123",
+      "city": "surat",
+      "gender": "male",
+      "phone": "86123234556",
+      "country": "India",
+      "id": 6
+    }
+  ]
+}

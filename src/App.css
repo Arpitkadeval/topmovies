@@ -1,0 +1,27 @@
+* {
+  color: #fff;
+}
+.maarging {
+  margin-top: 35px;
+}
+.peddin {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+.peddina {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+.blaack {
+  color: black;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+}
+.Logoo {
+  width: 10px;
+  height: 10px;
+}
+.footar {
+  position: absolute;
+}
