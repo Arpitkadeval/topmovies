@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/topmovies/static/css/main.8ed00b5b.chunk.css",
+    "main.js": "/topmovies/static/js/main.10fcae4e.chunk.js",
+    "main.js.map": "/topmovies/static/js/main.10fcae4e.chunk.js.map",
+    "runtime~main.js": "/topmovies/static/js/runtime~main.2de16e77.js",
+    "runtime~main.js.map": "/topmovies/static/js/runtime~main.2de16e77.js.map",
+    "static/css/2.171a7357.chunk.css": "/topmovies/static/css/2.171a7357.chunk.css",
+    "static/js/2.4d1c92d9.chunk.js": "/topmovies/static/js/2.4d1c92d9.chunk.js",
+    "static/js/2.4d1c92d9.chunk.js.map": "/topmovies/static/js/2.4d1c92d9.chunk.js.map",
+    "static/js/3.18b4e97d.chunk.js": "/topmovies/static/js/3.18b4e97d.chunk.js",
+    "static/js/3.18b4e97d.chunk.js.map": "/topmovies/static/js/3.18b4e97d.chunk.js.map",
+    "index.html": "/topmovies/index.html",
+    "precache-manifest.c8ab2387e09facb0c8b86ae42a7c1bf3.js": "/topmovies/precache-manifest.c8ab2387e09facb0c8b86ae42a7c1bf3.js",
+    "service-worker.js": "/topmovies/service-worker.js",
+    "static/css/2.171a7357.chunk.css.map": "/topmovies/static/css/2.171a7357.chunk.css.map",
+    "static/css/main.8ed00b5b.chunk.css.map": "/topmovies/static/css/main.8ed00b5b.chunk.css.map",
+    "static/media/36593953.jpg": "/topmovies/static/media/36593953.57086143.jpg"
+  }
+}
