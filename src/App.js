@@ -25,6 +25,7 @@ function App() {
             <Route exact path="/users/:id" element={<User />} />
             <Route exact path="/" element={<Myproj />} />
             <Route exact path="/userslist" element={<Home />} />
+            <Route path="*" element={<Home to="/" />} />
           </Routes>
         </div>
       </BrowserRouter>
