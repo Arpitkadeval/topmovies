@@ -1,12 +1,12 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ReactSelect from "react-select";
 
 export default function Addusee() {
   let navigate = useNavigate();
   const [contries, setContries] = useState([]);
-  const [user, setUser] = useState({
+  const [alluser, setUser] = useState({
     name: "",
     username: "",
     email: "",
@@ -16,21 +16,29 @@ export default function Addusee() {
     phone: "",
     country: "",
   });
-  const { name, username, email, password, city, gender, phone } = user;
-  React.useEffect(() => {
+  const { name, username, email, password, city, gender, phone } = alluser;
+  useEffect(() => {
     countryDataHandler();
   }, []);
   const onInputChange = (e, key) => {
     if (key === "country") {
-      setUser({ ...user, [key]: e.value });
+      setUser({ ...alluser, [key]: e.value });
     } else {
-      setUser({ ...user, [e.target.name]: e.target.value });
+      setUser({ ...alluser, [e.target.name]: e.target.value });
     }
   };
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:3003/users", user);
-    navigate("/");
+    axios({
+      method: "POST",
+      url: "http://localhost:3003/users",
+      data: alluser,
+    })
+    .then((response)=>{
+      console.log("<<<<<<<<<<<>>>>>>>>>>>>>>",response.data.users);
+      navigate("/")
+    })
+ 
   };
 
   const countryDataHandler = async () => {
@@ -148,7 +156,7 @@ export default function Addusee() {
               name="country"
               onChange={(e) => onInputChange(e, "country")}
               value={contries.filter((contry) => {
-                return contry.label === user.country;
+                return contry.label === alluser.country;
               })}
               options={contries || []}
               formatOptionLabel={(country) => (

@@ -7,7 +7,7 @@ export default function Edit() {
   let navigate = useNavigate();
   const { id } = useParams();
   const [contries, setContries] = useState([]);
-  const [user, setUser] = useState({
+  const [alluser, setUser] = useState({
     name: "",
     username: "",
     email: "",
@@ -18,16 +18,16 @@ export default function Edit() {
     phone: "",
     country: "",
   });
-  const { name, username, email, password, city, gender, phone } = user;
+  const { name, username, email, password, city, gender, phone } = alluser;
   React.useEffect(() => {
     countryDataHandler();
   }, []);
 
   const onInputChange = (e, key) => {
     if (key === "country") {
-      setUser({ ...user, [key]: e.value });
+      setUser({ ...alluser, [key]: e.value });
     } else {
-      setUser({ ...user, [e.target.name]: e.target.value });
+      setUser({ ...alluser, [e.target.name]: e.target.value });
     }
   };
   useEffect(() => {
@@ -55,12 +55,31 @@ export default function Edit() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:3003/users/${id}`, user);
-    navigate("/");
+    await axios({
+      method: "PUT",
+      url: `http://localhost:3003/updateuser/${id}`,
+      data:alluser
+    })
+    .then((response) => {
+      console.log(response.data);
+      loadUsers();
+    //  setUser(response.data);
+     navigate("/userslist")
+    })
+    .catch((erro) => {
+      console.log("error", erro);
+    });
   };
   const loadUsers = async () => {
-    const result = await axios.get(`http://localhost:3003/users/${id}`);
-    setUser(result.data);
+     await axios.get(`http://localhost:3003/usersupdatea/${id}`)
+     .then((response) => {
+      console.log(response.data);
+      setUser(response.data);
+    })
+    .catch((erro) => {
+      console.log("error", erro);
+    });
+    
   };
   return (
     <div className="container">
@@ -161,7 +180,7 @@ export default function Edit() {
               name="country"
               onChange={(e) => onInputChange(e, "country")}
               value={contries.filter((contry) => {
-                return contry.label === user.country;
+                return contry.label === alluser.country;
               })}
               options={contries || []}
               formatOptionLabel={(country) => (

@@ -13,23 +13,23 @@ import User from "./components/users/User";
 import Myproj from "./components/netfex/Myproj";
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <div className="App">
-          <Navbar />
-          <Routes>
-            <Route exact path="/aboud" element={<Aboud />} />
-            <Route exact path="/contact" element={<Contacta />} />
+   
+      <>
+  <BrowserRouter>
+      <Navbar/>
+        <Routes>
+        <Route exact path="/aboud" element={<Aboud />} />
+        <Route exact path="/contact" element={<Contacta />} />
             <Route exact path="/users/add" element={<Addusee />} />
             <Route exact path="/users/edit/:id" element={<Edit />} />
             <Route exact path="/users/:id" element={<User />} />
             <Route exact path="/" element={<Myproj />} />
             <Route exact path="/userslist" element={<Home />} />
-            <Route path="*" element={<Home to="/" />} />
-          </Routes>
-        </div>
+          <Route path="*" element={<Home to="/" />} />
+        </Routes>
       </BrowserRouter>
     </>
+
   );
 }
 
